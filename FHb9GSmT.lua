@@ -70,7 +70,7 @@ MainFrame.Position = UDim2.new(0.5, -200, 0.5, -150)
 MainFrame.Size = UDim2.new(0, 400, 0, 300)
 MainFrame.Active = true
 MainFrame.Draggable = true
-MainFrame.Visible = false -- Start hidden, animate in
+MainFrame.Visible = true -- ✅ CORRIGIDO: Agora aparece automaticamente
 
 local MainCorner = Instance.new("UICorner")
 MainCorner.CornerRadius = UDim.new(0, 12)
@@ -212,7 +212,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
             tweenOut.Completed:Wait()
             MainFrame.Visible = false
         else
-            MainFrame.Transparency = 1
+            MainFrame.Transparency = 0
             MainFrame.Visible = true
             local tweenIn = TweenService:Create(MainFrame, TweenInfo.new(0.3), {Transparency = 0})
             tweenIn:Play()
@@ -650,4 +650,4 @@ Workspace.ChildAdded:Connect(function(child)
         espHighlights[child] = highlight
     end
 end)
-print("Evade Ultimate Script V2 Loaded! Press Insert to toggle menu.")
+print("✅ Evade Ultimate Script V2 Loaded! GUI apareceu automaticamente.")
